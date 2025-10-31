@@ -188,13 +188,15 @@ All data and analysis outputs are publicly available on Zenodo:
 
 Contents
 
-Behavioural: Raw .csv files for behavioural data. Each file is named SS_PO_BL_DATE.csv, where SS is the subject identifier, PO is the polarity identifier (AN or CA), BL is the Block identifier (ex PR 1 for Pre Block 1, PO for Post Block 1)
+-Behavioural: Raw .csv files for behavioural data. Each file is named SS_PO_BL_DATE.csv, where SS is the subject identifier, PO is the polarity identifier (AN or CA), BL is the Block identifier (ex PR 1 for Pre Block 1, PO for Post Block 1)
 
-EEG: Preprocessed, trial-aligned EEG Files
+-EEG: Preprocessed, trial-aligned EEG Files
 
-Psychometric Permutations: Output of the permutation testing for psychometrics.
-Included are the 'true' difference-in-difference calculations based on the actual outcome of the experiment, and the 'null' distribution based on the permutation testing we calculated.
-Each file is organized according to level (group, subject, session), data type (none referring to all data, Prev_Choice indicating splits based on the previous choice direciton, Prev_RT split by previous median RT, and Rep split between repetitions and alternations).
+- Psychometric Permutations: Output of the permutation testing for psychometrics.
+  - Included are the 'true' difference-in-difference calculations based on the actual outcome of the experiment, and the 'null' distribution based on the permutation testing we calculated.
+  - Each file is organized according to level (group, subject, session), data type (none referring to all data, Prev_Choice indicating splits based on the previous choice direciton, Prev_RT split by previous median RT, and Rep split between repetitions and alternations).
+
+- EEG Permutations: Output of the EEG testing for psychometrics.
 
 Data are shared under a CC-BY 4.0 license for academic and non-commercial use.```
 
