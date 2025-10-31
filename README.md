@@ -64,7 +64,6 @@ We developed a **difference-in-differences (DiD) permutation testing framework**
 | **Stimulation type** | High-definition tDCS (HD-tDCS), 4×1 montage |
 | **Current** | 2 mA center electrode, –0.5 mA per return electrode |
 | **Stimulation duration** | 20 minutes (ramp-up/ramp-down: 30 s) |
-| **Counterbalancing** | Polarity order randomized across participants |
 
 ---
 
