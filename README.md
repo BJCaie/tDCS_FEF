@@ -27,42 +27,21 @@ We developed a **difference-in-differences (DiD) permutation testing framework**
 
 | Folder | Description |
 |--------|--------------|
-| `data/` | Raw and preprocessed behavioural and EEG data for all participants. |
-| `scripts/` | Analysis and visualization scripts written in Python (and MATLAB if applicable). |
-| `models/` | Electric field simulations for HD-tDCS electrode montages (SimNIBS outputs). |
+| `scripts/` | Scripts to run all analyses and plot paper results. |
 | `figures/` | All figures and plots corresponding to results in the paper. |
-| `results/` | Output files from permutation tests and summary statistics. |
 | `notebooks/` | Jupyter notebooks for reproducing key analyses and figures. |
-| `docs/` | Supplementary materials and supporting documentation. |
 
----
 
 ## ⚙️ Installation & Dependencies
 
-Clone the repository:
-
-```bash
-git clone https://github.com/<username>/tDCS-variability.git
-cd tDCS-variability
-pip install -r requirements.txt
+- Clone the repository:
+- git clone https://github.com/<username>/tDCS-variability.git
+- cd tDCS-variability
+- pip install -r requirements.txt
 
 ---
 
-## 📊 Repository Contents
-
-| Folder | Description |
-|--------|--------------|
-| `data/` | Raw and preprocessed behavioural and EEG data for all participants. |
-| `scripts/` | Analysis and visualization scripts written in Python (and MATLAB if applicable). |
-| `models/` | Electric field simulations for HD-tDCS electrode montages (SimNIBS outputs). |
-| `figures/` | All figures and plots corresponding to results in the paper. |
-| `results/` | Output files from permutation tests and summary statistics. |
-| `notebooks/` | Jupyter notebooks for reproducing key analyses and figures. |
-| `docs/` | Supplementary materials and supporting documentation. |
-
----
-
-### Main Python Packages
+## Main Python Packages
 
 * `numpy`, `pandas`, `scipy`
 * `mne` (for EEG analysis)
@@ -77,7 +56,7 @@ pip install -r requirements.txt
 
 | Parameter | Description |
 |------------|--------------|
-| **Participants** | 5 healthy adults (aged 20–35) |
+| **Participants** | 5 healthy adults |
 | **Sessions per participant** | 10 (5 anodal, 5 cathodal) over ~5 weeks |
 | **Task** | Free-choice saccade task |
 | **Modality** | Behavioural + EEG + fMRI (for FEF localization) |
@@ -94,8 +73,8 @@ pip install -r requirements.txt
 Participants were presented with two peripheral visual targets (left/right).  
 Each trial consisted of:
 
-1. **Fixation phase:** central fixation for 800–1200 ms  
-2. **Target onset:** both targets appear with a **temporal onset asynchrony (TOA)** ranging from –100 to +100 ms (left/right lead)  
+1. **Fixation phase:** central fixation for 750–1250 ms  
+2. **Target onset:** both targets appear with a **temporal onset asynchrony (TOA)** ranging from –99 to +99 ms (left/right lead)  
 3. **Response:** participants made a **saccadic eye movement** toward their chosen target  
 4. **Feedback:** none (to preserve free-choice behaviour)
 
@@ -119,7 +98,7 @@ Each participant received **both anodal and cathodal** stimulation across sessio
 
 | Data Type | Description |
 |------------|-------------|
-| **Behavioural** | Reaction times (RT), choice proportions (left/right), psychometric functions |
+| **Behavioural** | Reaction times (RT), choice (left/right) |
 | **EEG** | Continuous recordings during task (pre/post stimulation) |
 | **Simulations** | Electric field (E-field) distribution from SimNIBS |
 | **fMRI** | Structural & functional localization of right FEF |
@@ -129,18 +108,18 @@ Each participant received **both anodal and cathodal** stimulation across sessio
 ## 🔍 Analysis Pipeline
 
 ### 1. Behavioural Analysis
-- Fit **psychometric choice curves** (logistic regression) to determine:
+- Fit **psychometric choice curves** to determine:
   - **PSE (Point of Subjective Equality)**
   - **Slope (sensitivity)**
 - Compare **pre- vs post-tDCS** differences by polarity and participant.
-- Evaluate **reaction time distributions** (mean, variance, skew).
+- Evaluate **reaction time distributions** (mean and variance) .
 
 ### 2. EEG Analysis
 - Preprocessing with `MNE-Python`:
   - Band-pass filtering (1–40 Hz)
-  - ICA-based artifact removal
+  - Current Source Density Estimation via Surface Laplacian
 - Compute **time–frequency decompositions** for alpha (8–12 Hz) and beta (13–30 Hz) bands.
-- Contrast **pre/post tDCS** epochs to assess event-related spectral perturbations (ERSPs).
+- Contrast **pre/post tDCS** epochs.
 
 ### 3. Causal Inference (Difference-in-Differences Permutation)
 - Implement **Difference-in-Differences (DiD)** testing:
@@ -156,8 +135,6 @@ Each participant received **both anodal and cathodal** stimulation across sessio
 ### 4. Electric Field Analysis
 - Simulate individual E-field maps using *SimNIBS 4.0*.
 - Extract regional mean intensity over the rFEF and surrounding areas.
-- Correlate E-field magnitude with behavioural and EEG effect sizes.
-
 ---
 
 ## 📈 Key Findings
@@ -178,8 +155,11 @@ If you use this repository or its methods, please cite:
 @article{caie2025tDCS,
   title={Variability in the effects of transcranial direct current stimulation on free choice behaviour},
   author={Caie, Brandon and Blohm, Gunnar},
-  year={2025},
+  year={2024},
   institution={Queen’s University, Centre for Neuroscience Studies}
+  journal={bioRxiv}
+  doi={https://doi.org/10.1101/2024.08.23.609379}
+
 }
 ```
 
@@ -187,13 +167,7 @@ If you use this repository or its methods, please cite:
 
 ## 🧩 Reproducibility
 
-All analysis pipelines are designed to be **fully reproducible** using provided data and scripts.
-For full replication:
-
-1. Run the preprocessing pipeline in `scripts/preprocess_eeg.py`
-2. Execute `scripts/psychometric_analysis.py`
-3. Run the permutation test pipeline in `scripts/did_permutation.py`
-4. Use `notebooks/figure_generation.ipynb` to reproduce figures from the paper.
+All analysis pipelines are designed to be **fully reproducible** using provided data and scripts. The permutation testing results are included in the Zotero folder, as they required significant computational time. However, the scripts to perform the permutation testing are available in 'permutationTestingEEG.py' and 'permutationTestingPsychometrics.py', which run on the raw data included in the Zotero folder
 
 ---
 
@@ -214,11 +188,13 @@ All data and analysis outputs are publicly available on Zenodo:
 
 Contents
 
-Raw Data: De-identified behavioural and EEG recordings (per participant & session)
+Behavioural: Raw .csv files for behavioural data. Each file is named SS_PO_BL_DATE.csv, where SS is the subject identifier, PO is the polarity identifier (AN or CA), BL is the Block identifier (ex PR 1 for Pre Block 1, PO for Post Block 1)
 
-Preprocessed Data: Cleaned EEG, reaction time, and psychometric summaries
+EEG: Preprocessed, trial-aligned EEG Files
 
-Results: Statistical outputs from difference-in-differences analyses
+Psychometric Permutations: Output of the permutation testing for psychometrics.
+Included are the 'true' difference-in-difference calculations based on the actual outcome of the experiment, and the 'null' distribution based on the permutation testing we calculated.
+Each file is organized according to level (group, subject, session), data type (none referring to all data, Prev_Choice indicating splits based on the previous choice direciton, Prev_RT split by previous median RT, and Rep split between repetitions and alternations).
 
 Data are shared under a CC-BY 4.0 license for academic and non-commercial use.```
 
