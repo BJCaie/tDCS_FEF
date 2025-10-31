@@ -130,18 +130,6 @@ def plotPermutationAnalysis(averaging_type, subj_keys, data_splits, polarities, 
                 true[:,0:baseline] = np.nan
                 true[np.isnan(sig)] = np.nan
 
-                #plt.pcolormesh(t, freqs, true, vmin = -2, vmax = 2, cmap = 'viridis')
-                #plt.title(f'group average {data_type} {polarity} corrected sig voxels')
-                #plt.colorbar()
-
-                #sig[sig>p] = np.nan
-                #true[np.isnan(sig)] = np.nan
-                
-                #plt.figure()
-                #plt.pcolormesh(t, freqs, true, vmin = -2, vmax = 2)
-                #plt.title(f'group average {data_type} {polarity} corrected sig voxels')
-                #plt.colorbar()
-
             subplot = 223
             fig.add_subplot(subplot)
 
@@ -169,7 +157,6 @@ def plotPermutationAnalysis(averaging_type, subj_keys, data_splits, polarities, 
             plt.pcolormesh(t, freqs, true_subtract, vmin = -2, vmax = 2)
             plt.title(f'{data_type} corrected polarity subtraction group average')
             plt.colorbar()
-        plt.savefig(rf'{directory}\Figures\EEG_Permutation_Group_Average_{data_type}', format = 'svg')
 
 
     elif averaging_type == 'Individual':
@@ -337,4 +324,5 @@ def fitLinearModel(x, y):
     est = sm.OLS(y, X2)
     est2 = est.fit()
     return est2.pvalues[1], est2.rsquared
+
 
