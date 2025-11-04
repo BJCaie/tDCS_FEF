@@ -55,7 +55,6 @@ def getSessions(eeg_path, behavioural_path, subj_keys, stim_type):
                                     eeg = np.delete(eeg.to_numpy(), 0 , 1)
                                     TFR = computeTFR(eeg, plotting = False, freq_band = freq_band)
                                     behave = pd.read_csv(behavioural_path + '/' + block, index_col = False)
-                                    ## NEED TO FILTER OUT BAD TRIALS IN EEG HERE
                                     if pd.read_csv(behavioural_path + '/' + block, index_col = False).shape[0] == TFR.shape[0]:
                                             if isinstance(sessions[subj][polarity][date]['behave'], int) is True:
                                                 sessions[subj][polarity][date]['behave'] = behave
@@ -537,6 +536,7 @@ def plotBandTimeCourse(averaging_type, subj_keys, data_splits, directory):
                 plt.title(f'{subj} {data_type} beta band modulation')
                 plt.xlabel('Time from Trial Onset (s)')
                 plt.ylabel('Delta Power')
+
 
 
 
