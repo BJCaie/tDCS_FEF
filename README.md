@@ -13,11 +13,10 @@ This repository accompanies the paper:
 > **Caie, B. & Blohm, G. (2025). _Variability in the effects of transcranial direct current stimulation on free choice behaviour._ Centre for Neuroscience Studies, Queen’s University.**
 
 The study investigates **intra- and inter-individual variability** in how **high-definition transcranial direct current stimulation (HD-tDCS)** affects neural and behavioural measures during a **free-choice saccade task**.  
-Across **10 sessions per participant (5 participants total)**, we combined behavioural, EEG, and fMRI data to evaluate how stimulation polarity (anodal vs cathodal) influenced:
+Across **10 sessions per participant (5 participants total)**, we combined behavioural and EEG data to evaluate how stimulation polarity (anodal vs cathodal) influenced:
 
 - Reaction times and psychometric choice curves  
 - EEG time–frequency responses  
-- Variability within and across individuals
 
 We developed a **difference-in-differences (DiD) permutation testing framework** to assess causal effects of tDCS at the **group, individual, and session levels**.
 
