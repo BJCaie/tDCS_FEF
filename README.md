@@ -6,7 +6,7 @@
 
 ---
 
-## 🧠 Overview
+## Overview
 
 This repository accompanies the paper:
 
@@ -23,7 +23,7 @@ We developed a **difference-in-differences (DiD) permutation testing framework**
 
 ---
 
-## 📊 Repository Contents
+## Repository Contents
 
 | Folder | Description |
 |--------|--------------|
@@ -32,7 +32,7 @@ We developed a **difference-in-differences (DiD) permutation testing framework**
 | `notebooks/` | Jupyter notebooks for reproducing key analyses and figures. |
 
 
-## ⚙️ Installation & Dependencies
+## Installation & Dependencies
 
 - Clone the repository:
 - git clone https://github.com/<username>/tDCS-variability.git
@@ -52,7 +52,7 @@ We developed a **difference-in-differences (DiD) permutation testing framework**
 
 ---
 
-## 🧪 Experiment Summary
+## Experiment Summary
 
 | Parameter | Description |
 |------------|--------------|
@@ -93,7 +93,7 @@ Each participant received **both anodal and cathodal** stimulation across sessio
 
 ---
 
-## ⏱️ Data Collected
+## Data Collected
 
 | Data Type | Description |
 |------------|-------------|
@@ -104,7 +104,7 @@ Each participant received **both anodal and cathodal** stimulation across sessio
 
 ---
 
-## 🔍 Analysis Pipeline
+## Analysis Pipeline
 
 ### 1. Behavioural Analysis
 - Fit **psychometric choice curves** to determine:
@@ -136,7 +136,7 @@ Each participant received **both anodal and cathodal** stimulation across sessio
 - Extract regional mean intensity over the rFEF and surrounding areas.
 ---
 
-## 📈 Key Findings
+## Key Findings
 
 * **Group-level:** tDCS polarity significantly modulated reaction times and corresponding EEG responses, but not choice direction.
 * **Inter-individual:** Effects were heterogeneous and often contradictory between participants.
@@ -146,7 +146,7 @@ These findings indicate that **tDCS effects are not reliably consistent across s
 
 ---
 
-## 📚 Citation
+## Citation
 
 If you use this repository or its methods, please cite:
 
@@ -164,13 +164,13 @@ If you use this repository or its methods, please cite:
 
 ---
 
-## 🧩 Reproducibility
+## Reproducibility
 
 All analysis pipelines are designed to be **fully reproducible** using provided data and scripts. The permutation testing results are included in the Zotero folder, as they required significant computational time. However, the scripts to perform the permutation testing are available in 'permutationTestingEEG.py' and 'permutationTestingPsychometrics.py', which run on the raw data included in the Zotero folder
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 This work was supported by the **Centre for Neuroscience Studies, Queen’s University**, **The Natural Sciences and Engineering Research Council of Canada (NSERC)**, and collaboration between **NSERC’s Collaborative Research and Training Experience (CREATE)** and **DFG’s International Research Training Groups (IRTG)**
 We thank all participants and collaborators who contributed to data collection and analysis.
@@ -178,12 +178,12 @@ We thank all participants and collaborators who contributed to data collection a
 ---
 
 *For questions or contributions, please contact:*
-📧 [brandon.caie@queensu.ca](mailto:brandon.caie@queensu.ca)
+ [brandon.caie@queensu.ca](mailto:brandon.caie@queensu.ca)
 
 ```
 All data and analysis outputs are publicly available on Zenodo:
 
-📦 Dataset DOI: https://zenodo.org/uploads/17486711
+Dataset DOI: https://zenodo.org/uploads/17486711
 
 Contents
 
