@@ -165,7 +165,7 @@ If you use this repository or its methods, please cite:
 
 ## Reproducibility
 
-All analysis pipelines are designed to be **fully reproducible** using provided data and scripts. The permutation testing results are included in the Zotero folder, as they required significant computational time. However, the scripts to perform the permutation testing are available in 'permutationTestingEEG.py' and 'permutationTestingPsychometrics.py', which run on the raw data included in the Zotero folder
+All analysis pipelines are designed to be **fully reproducible** using provided data and scripts. Results from the permutation testing procedure take significant computational time, so the results were saved and uploaded to the public Zenodo repository. However, the scripts to perform the permutation testing are available in 'permutationTestingEEG.py' and 'permutationTestingPsychometrics.py', which run on the raw data included in the Zenodo folder
 
 ---
 
