@@ -180,9 +180,9 @@ We thank all participants and collaborators who contributed to data collection a
  [brandon.caie@queensu.ca](mailto:brandon.caie@queensu.ca)
 
 ```
-All data and analysis outputs are publicly available on Zenodo:
+All data and analysis outputs are publicly available on Zenodo: https://zenodo.org/uploads/17545450
 
-Dataset DOI: https://zenodo.org/uploads/17486711
+Dataset DOI: 10.5281/zenodo.17545450
 
 Contents
 
